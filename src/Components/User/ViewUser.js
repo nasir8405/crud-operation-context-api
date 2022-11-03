@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../Pages/Users/UsersProvider";
 import Table from "react-bootstrap/Table";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export const ViewUser = () => {
+  const navigate = useNavigate();
   const context = useContext(Context);
   const params = useParams();
   const user = context.state.find((item) => {
@@ -29,6 +31,11 @@ export const ViewUser = () => {
           </tr>
         </tbody>
       </Table>
+      <div className="d-flex justify-content-center my-4">
+        <Button className="btn btn-dark" onClick={() => navigate("/")}>
+          Home
+        </Button>
+      </div>
     </div>
   );
 };

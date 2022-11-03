@@ -21,7 +21,7 @@ export const AddUser = () => {
   const handleSubmit = (e) => {
     context.dispatch({
       type: "ADD",
-      payload: { ...user, id: context.state.length + 1 },
+      payload: { ...user, id: JSON.stringify(context.state.length + 1) },
     });
     setUser({ name: "", profession: "", country: "" });
     handleClose();

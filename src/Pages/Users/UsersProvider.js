@@ -12,7 +12,6 @@ const reducer = (state, action) => {
     case "UPDATE":
       const updatedUser = [...state];
       updatedUser.splice(action.index, 1, action.user);
-      console.log(state);
       return updatedUser;
     default:
       return state;
