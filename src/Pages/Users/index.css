@@ -1,0 +1,22 @@
+td,
+th {
+  text-align: center !important;
+}
+.header {
+  background-color: rgb(168, 176, 187);
+  text-align: center;
+  padding: 7px;
+}
+/* .viewTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+.header-link {
+  text-decoration: none;
+  color: white;
+}
+.header-link:hover {
+  color: white;
+}
