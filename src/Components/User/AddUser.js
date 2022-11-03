@@ -9,9 +9,7 @@ export const AddUser = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  let id = context.state.length;
   const [user, setUser] = useState({
-    id: id + 1,
     name: "",
     profession: "",
     country: "",
@@ -21,7 +19,10 @@ export const AddUser = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
-    context.dispatch({ type: "ADD", payload: user });
+    context.dispatch({
+      type: "ADD",
+      payload: { ...user, id: context.state.length + 1 },
+    });
     setUser({ name: "", profession: "", country: "" });
     handleClose();
   };
