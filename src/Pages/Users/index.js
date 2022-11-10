@@ -5,7 +5,7 @@ import "./index.css";
 const StudentsPage = () => {
   return (
     <>
-      <h3 className="header">People List</h3>
+      <h3 className="header">THE MOST FAMOUS ATHLETES IN THE WORLD</h3>
       <div className="container my-5">
         <TableData />
       </div>

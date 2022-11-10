@@ -11,40 +11,69 @@ export const TableData = () => {
     context.dispatch({ type: "DELETE", payload: id });
   };
   return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Profession</th>
-          <th>Country</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {state.map((item, index) => {
-          return (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.profession}</td>
-              <td>{item.country}</td>
-              <td>
-                <UpdateUser id={item.id} index={index} />
-                <Link to={`/user/${item.id}`} className="btn btn-info ms-2">
-                  View
-                </Link>
-                <button
-                  className="btn btn-danger ms-2"
-                  onClick={() => deleteUser(item.id)}
-                >
-                  Delete
-                </button>
-              </td>
+    <>
+      {state.length !== 0 ? (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>
+                <div>ID</div>
+              </th>
+              <th>
+                <div>Name</div>
+              </th>
+              <th>
+                <div>Game Palyed</div>
+              </th>
+              <th>
+                <div>Country</div>
+              </th>
+              <th>
+                <div>Action</div>
+              </th>
             </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+          </thead>
+          <tbody>
+            {state.map((item, index) => {
+              return (
+                <tr key={item.id}>
+                  <td>
+                    <div>{item.id}</div>
+                  </td>
+                  <td>
+                    <div>{item.name}</div>
+                  </td>
+                  <td>
+                    <div>{item.gamePlayed}</div>
+                  </td>
+                  <td>
+                    <div>{item.country}</div>
+                  </td>
+                  <td>
+                    <UpdateUser id={item.id} index={index} />
+                    <Link
+                      to={`/user/${item.id}`}
+                      className="btn btn-info ms-2 my-3"
+                    >
+                      View
+                    </Link>
+                    <button
+                      className="btn btn-danger ms-2"
+                      onClick={() => deleteUser(item.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      ) : (
+        <div className="item-message">
+          Please insert new item, Click on above ADD Button
+        </div>
+      )}
+    </>
   );
 };

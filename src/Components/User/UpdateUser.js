@@ -15,16 +15,16 @@ export const UpdateUser = ({ id, index }) => {
   const [user, setUser] = useState({
     id: id,
     name: giverUser.name,
-    profession: giverUser.profession,
+    gamePlayed: giverUser.gamePlayed,
     country: giverUser.country,
   });
-  const { name, profession, country } = user;
+  const { name, gamePlayed, country } = user;
   const onHandleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     context.dispatch({ type: "UPDATE", user: user, index: index });
-    setUser({ name: "", profession: "", country: "" });
+    setUser({ name: "", gamePlayed: "", country: "" });
     handleClose();
   };
   return (
@@ -59,7 +59,7 @@ export const UpdateUser = ({ id, index }) => {
               <Form.Control
                 type="text"
                 name="profession"
-                value={profession}
+                value={gamePlayed}
                 onChange={(e) => onHandleChange(e)}
                 placeholder="Enter Your Profession"
               />

@@ -1,22 +1,35 @@
 td,
 th {
   text-align: center !important;
+  height: 0 !important;
 }
 .header {
   background-color: rgb(168, 176, 187);
   text-align: center;
   padding: 7px;
 }
-/* .viewTable {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
 .header-link {
   text-decoration: none;
   color: white;
 }
 .header-link:hover {
   color: white;
+}
+.item-message {
+  width: 50%;
+  margin: auto;
+  background-color: #212529;
+  text-align: center;
+  padding: 7px;
+  color: white;
+}
+th > div,
+td > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+table {
+  align-items: center;
 }
